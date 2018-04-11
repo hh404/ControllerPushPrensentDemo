@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A29F7BB206B3B2B00D7C708 /* TransitionDismissPopStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29F7BA206B3B2B00D7C708 /* TransitionDismissPopStyleAnimator.swift */; };
 		3A7FB610206A21C3007F7944 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB60F206A21C3007F7944 /* AppDelegate.swift */; };
 		3A7FB612206A21C3007F7944 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB611206A21C3007F7944 /* ViewController.swift */; };
 		3A7FB615206A21C3007F7944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FB613206A21C3007F7944 /* Main.storyboard */; };
@@ -14,6 +15,11 @@
 		3A7FB61A206A21C3007F7944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FB618206A21C3007F7944 /* LaunchScreen.storyboard */; };
 		3A7FB625206A21C3007F7944 /* ControllerPushPrensentDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB624206A21C3007F7944 /* ControllerPushPrensentDemoTests.swift */; };
 		3A7FB630206A21C3007F7944 /* ControllerPushPrensentDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB62F206A21C3007F7944 /* ControllerPushPrensentDemoUITests.swift */; };
+		3A7FB641206A222E007F7944 /* btnLayerClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FB63D206A222D007F7944 /* btnLayerClose@2x.png */; };
+		3A7FB642206A222E007F7944 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB63E206A222D007F7944 /* ContentViewController.swift */; };
+		3A7FB643206A222E007F7944 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB63F206A222D007F7944 /* PresentViewController.swift */; };
+		3A7FB644206A222E007F7944 /* NavRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FB640206A222E007F7944 /* NavRootViewController.swift */; };
+		3AA03738206A5B3400F56725 /* TransitionPresenPushStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA03737206A5B3400F56725 /* TransitionPresenPushStyleAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A29F7BA206B3B2B00D7C708 /* TransitionDismissPopStyleAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDismissPopStyleAnimator.swift; sourceTree = "<group>"; };
 		3A7FB60C206A21C3007F7944 /* ControllerPushPrensentDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControllerPushPrensentDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FB60F206A21C3007F7944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7FB611206A21C3007F7944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,11 @@
 		3A7FB62B206A21C3007F7944 /* ControllerPushPrensentDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControllerPushPrensentDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FB62F206A21C3007F7944 /* ControllerPushPrensentDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerPushPrensentDemoUITests.swift; sourceTree = "<group>"; };
 		3A7FB631206A21C3007F7944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7FB63D206A222D007F7944 /* btnLayerClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnLayerClose@2x.png"; sourceTree = "<group>"; };
+		3A7FB63E206A222D007F7944 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		3A7FB63F206A222D007F7944 /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		3A7FB640206A222E007F7944 /* NavRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavRootViewController.swift; sourceTree = "<group>"; };
+		3AA03737206A5B3400F56725 /* TransitionPresenPushStyleAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPresenPushStyleAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,18 @@
 		3A7FB60E206A21C3007F7944 /* ControllerPushPrensentDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3A7FB63D206A222D007F7944 /* btnLayerClose@2x.png */,
+				3A7FB63E206A222D007F7944 /* ContentViewController.swift */,
+				3A7FB640206A222E007F7944 /* NavRootViewController.swift */,
+				3A7FB63F206A222D007F7944 /* PresentViewController.swift */,
 				3A7FB60F206A21C3007F7944 /* AppDelegate.swift */,
 				3A7FB611206A21C3007F7944 /* ViewController.swift */,
 				3A7FB613206A21C3007F7944 /* Main.storyboard */,
 				3A7FB616206A21C3007F7944 /* Assets.xcassets */,
 				3A7FB618206A21C3007F7944 /* LaunchScreen.storyboard */,
 				3A7FB61B206A21C3007F7944 /* Info.plist */,
+				3AA03737206A5B3400F56725 /* TransitionPresenPushStyleAnimator.swift */,
+				3A29F7BA206B3B2B00D7C708 /* TransitionDismissPopStyleAnimator.swift */,
 			);
 			path = ControllerPushPrensentDemo;
 			sourceTree = "<group>";
@@ -232,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7FB641206A222E007F7944 /* btnLayerClose@2x.png in Resources */,
 				3A7FB61A206A21C3007F7944 /* LaunchScreen.storyboard in Resources */,
 				3A7FB617206A21C3007F7944 /* Assets.xcassets in Resources */,
 				3A7FB615206A21C3007F7944 /* Main.storyboard in Resources */,
@@ -260,6 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7FB612206A21C3007F7944 /* ViewController.swift in Sources */,
+				3AA03738206A5B3400F56725 /* TransitionPresenPushStyleAnimator.swift in Sources */,
+				3A7FB642206A222E007F7944 /* ContentViewController.swift in Sources */,
+				3A29F7BB206B3B2B00D7C708 /* TransitionDismissPopStyleAnimator.swift in Sources */,
+				3A7FB643206A222E007F7944 /* PresentViewController.swift in Sources */,
+				3A7FB644206A222E007F7944 /* NavRootViewController.swift in Sources */,
 				3A7FB610206A21C3007F7944 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
