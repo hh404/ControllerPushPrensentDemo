@@ -14,12 +14,44 @@ class PresentViewController: UIViewController ,UIViewControllerTransitioningDele
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-                self.view.backgroundColor = UIColor.green
-        let bt :UIButton = UIButton(frame: CGRect(x: 30, y: 280, width: 20, height: 20))
-        let img = UIImage(named: "btnLayerClose")
-        bt.setImage(img, for: .normal)
-        bt.addTarget(self, action: #selector(click), for: .touchUpInside)
-        self.view.addSubview(bt)
+        
+        self.view.backgroundColor = UIColor.green
+        let pushBt :UIButton = UIButton(frame: CGRect(x: 50, y: 180, width: 80, height: 20))
+        pushBt.addTarget(self, action: #selector(push), for: .touchUpInside)
+        pushBt.setTitle("Push", for: .normal)
+        self.view.addSubview(pushBt)
+        
+        let popBt :UIButton = UIButton(frame: CGRect(x: 50, y: 240, width: 80, height: 20))
+        popBt.addTarget(self, action: #selector(pop), for: .touchUpInside)
+        popBt.setTitle("Pop", for: .normal)
+        self.view.addSubview(popBt)
+        
+        let presentBt :UIButton = UIButton(frame: CGRect(x: 180, y: 180, width: 80, height: 20))
+        presentBt.addTarget(self, action: #selector(presentVC), for: .touchUpInside)
+        presentBt.setTitle("Present", for: .normal)
+        self.view.addSubview(presentBt)
+        
+        let dismissbt :UIButton = UIButton(frame: CGRect(x: 180, y: 240, width: 80, height: 20))
+        dismissbt.addTarget(self, action: #selector(disMiss), for: .touchUpInside)
+        dismissbt.setTitle("Dismiss", for: .normal)
+        self.view.addSubview(dismissbt)
+        
+        let backToRootWithPopToRoot :UIButton = UIButton(frame: CGRect(x: 50, y: 280, width: 280, height: 20))
+        backToRootWithPopToRoot.addTarget(self, action: #selector(self.backToRootWithPopToRoot), for: .touchUpInside)
+        backToRootWithPopToRoot.setTitle("backToRootWithPopToRoot", for: .normal)
+        self.view.addSubview(backToRootWithPopToRoot)
+        
+        let backToRootWithDismiss :UIButton = UIButton(frame: CGRect(x: 50, y: 330, width: 280, height: 20))
+        backToRootWithDismiss.addTarget(self, action: #selector(self.backToRootWithDismiss), for: .touchUpInside)
+        backToRootWithDismiss.setTitle("backToRootWithDismiss", for: .normal)
+        self.view.addSubview(backToRootWithDismiss)
+        
+        
+        let changeRootVC :UIButton = UIButton(frame: CGRect(x: 50, y: 380, width: 280, height: 20))
+        changeRootVC.addTarget(self, action: #selector(self.changeRootVC), for: .touchUpInside)
+        changeRootVC.setTitle("changeRootVC", for: .normal)
+        self.view.addSubview(changeRootVC)
+        print("ViewDidLoad")
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +70,55 @@ class PresentViewController: UIViewController ,UIViewControllerTransitioningDele
         //nav.pushViewController(vc, animated: true)
     }
     
+    
+    @objc func push()  {
+        let vc = PresentViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func presentVC()  {
+        let vc = PresentViewController()
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func pop()  {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func disMiss()  {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func backToRootWithDismiss()  {
+        //self.dismiss(animated: true, completion: nil)
+        let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let root: UINavigationController = app.window?.rootViewController as! UINavigationController
+        let vc = root.topViewController
+        vc?.dismiss(animated: true, completion: nil)
+        print("dd")
+    }
+    
+    @objc func backToRootWithPopToRoot()  {
+        //self.navigationController?.popToRootViewController(animated: true)
+        let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let root: UINavigationController = app.window?.rootViewController as! UINavigationController
+        root.popToRootViewController(animated: true)
+    }
+    
+    @objc func changeRootVC()  {
+        //self.navigationController?.popToRootViewController(animated: true)
+        let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let vc = ContentViewController()
+        app.window?.rootViewController = vc
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    deinit {
+        print("Deinit")
     }
 
     /*

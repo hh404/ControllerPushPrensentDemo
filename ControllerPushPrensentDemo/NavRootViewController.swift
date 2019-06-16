@@ -8,19 +8,39 @@
 
 import UIKit
 
+struct Item {
+    var sectionTitle: String!
+    var cellTitle: [String]!
+}
+
 class NavRootViewController: UIViewController,UIViewControllerTransitioningDelegate {
 
+    var dataArray: [Item] = []
+    var tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width), style: .plain)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = .init(rawValue: 0)
-        self.extendedLayoutIncludesOpaqueBars = true
-        // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.red
-        let bt :UIButton = UIButton(frame: CGRect(x: 30, y: 0, width: 20, height: 20))
-        let img = UIImage(named: "btnLayerClose")
-        bt.setImage(img, for: .normal)
-        bt.addTarget(self, action: #selector(click), for: .touchUpInside)
-        self.view.addSubview(bt)
+        
+        self.view.backgroundColor = UIColor.groupTableViewBackground
+        let pushItem = Item(sectionTitle: "Push", cellTitle: ["recursion Push","push->present->push"])
+        dataArray.append(pushItem)
+        let presentItem = Item(sectionTitle: "Present", cellTitle: ["present->push->push","present->push->present->push"])
+        dataArray.append(presentItem)
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.view.addSubview(tableView)
+        
+//        self.edgesForExtendedLayout = .init(rawValue: 0)
+//        self.extendedLayoutIncludesOpaqueBars = true
+//        // Do any additional setup after loading the view.
+//        self.view.backgroundColor = UIColor.red
+//        let bt :UIButton = UIButton(frame: CGRect(x: 30, y: 0, width: 20, height: 20))
+//        let img = UIImage(named: "btnLayerClose")
+//        bt.setImage(img, for: .normal)
+//        bt.addTarget(self, action: #selector(click), for: .touchUpInside)
+//        self.view.addSubview(bt)
     }
 
     @objc func click()  {
@@ -68,4 +88,34 @@ class NavRootViewController: UIViewController,UIViewControllerTransitioningDeleg
         return TransitionPresenPushStyleAnimator() as? UIViewControllerAnimatedTransitioning
     }
 
+}
+
+
+extension NavRootViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let item = self.dataArray[section]
+        return item.cellTitle.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        let item = self.dataArray[indexPath.section]
+        cell?.textLabel?.text = item.cellTitle[indexPath.row]
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let vc = PresentViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            let vc = PresentViewController()
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
 }
